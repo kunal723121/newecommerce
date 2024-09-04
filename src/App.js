@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Login } from "./Component/Login"
+import { Reg } from "./Component/Reg"
+import { Home } from "./Component/Home"
+import { Loaad } from "./Component/Loaad"
+import { Add } from "./Component/Add"
+import { Buy } from "./Component/Buy"
+import { Admin } from "./Component/Admin"
+import { Update } from "./Component/Update"
+import { Receivedorder } from "./Component/Receivedorder"
+import { Placedorder } from "./Component/Placedorder"
+import { Single } from "./Component/Single"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export let App=()=>{
+    return <div>
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element=<Login/> />
+            <Route path="/login" element=<Login/> />
+            <Route path="/reg" element=<Reg/> />
+            <Route path="/home" element=<Home/> />
+            <Route path="/load" element=<Loaad/> />
+            <Route path="/add" element=<Add/> />
+            <Route path="/buy" element=<Buy/> />
+            <Route path="/admin" element=<Admin/> />
+            <Route path="/update" element=<Update/> />
+            <Route path="/receivedorder" element=<Receivedorder/> />
+            <Route path="/placeorder" element=<Placedorder/> />
+            <Route path="/single" element=<Single/> />
+        </Routes>
+        </BrowserRouter>
+        </div>
 }
-
-export default App;
